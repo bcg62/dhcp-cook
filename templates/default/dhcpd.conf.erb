@@ -43,7 +43,6 @@ failover peer "<%= node['domain'] %>" {
   max-response-delay 60;
   max-unacked-updates 10;
   mclt <%= node['dhcp']['failover_params']['mclt'] %>;
-  auto-partner-down <%= node['dhcp']['failover_params']['auto_partner_down'] %> ;
   <% if @role =~ /primary/i -%>
   split 128;
   load balance max seconds 3;
